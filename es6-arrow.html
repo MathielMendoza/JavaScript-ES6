@@ -1,0 +1,32 @@
+<!Doctype html>
+<html>
+<head>
+    <title>Arrow</title>
+    <script>
+        //tradicional
+        var x = function (a) {
+            return a;
+        }
+        console.log(x("Hola funcion tradicional"))
+        //Fat arrow
+        //un parametro
+        var x = a => a;
+        console.log(x("Hola con Fat Arrow"))
+        //mas de un parametro
+        var x = (a, b) => a + " " + b;
+        console.log(x("Hola", "Crayola"));
+        //Sin parametros.
+        var x = () => "Hola Cara de bola"
+        console.log(x())
+        //Llamar a la funcion desde otra funcion
+        setTimeout(() => alert("Hola desde es6"), 1000);
+        //
+        var x = () => {
+            a = "Hola";
+            b = "Cara de bola";
+            alert(a + " " + b);
+        }
+        x();
+    </script>
+</head>
+</html>

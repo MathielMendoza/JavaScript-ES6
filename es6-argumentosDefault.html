@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Valores por default en argumentos</title>
+    <script>
+       //ES5
+       function multiplicar(a,b) {
+           b = typeof b !== 'undefined' ? b : 1;
+           return a*b;
+       }
+       console.log(multiplicar(5))
+       //ES6
+       function multiplcar2(a,b=1){
+           return a*b;
+       }
+       console.log(multiplcar2(5))
+       //pasamos tipos primitivos
+       function f(x,y=7,z=42){
+           return x+y+z;
+       }
+       console.log(f(1))
+
+       function cambiaFondo(elemento,color='yellow'){
+           var cuadrado = document.getElementById(elemento);
+           cuadrado.style.backgroundColor = color;
+       }
+       window.onload = function (){
+           cambiaFondo("cuadrado","blue");
+       }
+    </script>
+    <style>
+        #cuadrado{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div id="cuadrado"></div>
+</body>
+</html>

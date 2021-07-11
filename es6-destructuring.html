@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Destructuring</title>
+    <script>
+        let foo = ['uno', 'dos', 'tres'];
+        let [one, two, three] = foo;
+        console.log(one)
+        console.log(two)
+        //
+        let modulo = {
+            cuadrado(lon) {
+                console.log(lon * lon);
+            },
+            circulo(radio) {
+                console.log(radio * Math.PI);
+            },
+            texto(text) {
+                console.log(text);
+            }
+        };
+        let {cuadrado, texto, circulo} = modulo;
+        cuadrado(5);
+        texto('hola');
+        circulo(10)
+        //
+        let juana = {nombre: 'Juana', paterno: 'Perez'};
+        let juan = {nombre: 'Juan', paterno: 'Lopez', materno: 'Perez'};
+
+        function nombreCompleto({nombre, paterno, materno = 'N/A'}) {
+            console.log(`Hola ${nombre} ${paterno} ${materno}`)
+        }
+
+        nombreCompleto(juana)
+        nombreCompleto(juan)
+    </script>
+</head>
+<body>
+
+</body>
+</html>
